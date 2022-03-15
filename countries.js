@@ -4,6 +4,16 @@ const loadCountries = () => {
         .then(data => displayCountries(data));
 }
 const displayCountries = countries => {
-    console.log(countries[2]);
+    // console.log(countries[2]);
+    const countriesHTML = countries.map(country => getCountryHTML(country));
+    console.log(countriesHTML);
 }
+const getCountryHTML = country => {
+    return `
+        <div>
+            <h2>${country.name.common}</h2>
+        </div>
+    `
+}
+
 loadCountries();
